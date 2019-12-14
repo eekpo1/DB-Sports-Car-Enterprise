@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>DB Sports Car Enterprise - Login</title>
+
+    <!--    Stylesheets-->
+
+    <link rel="stylesheet" data-th-href="@{css/CSSpage.css}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <header data-th-insert="fragments/navBar.html :: header"></header>
+
+
+
+
+
+    <div class="login_registerbg">
+        <!-- Main Box -->
+        <div class="col-md-5" id="LR_Box">
+            <!-- LR_Header-->
+            <div id="LR_Header">
+                <h3>Login</h3>
+                <hr>
+            </div><!-- LR_Header End-->
+            <!-- LR_Body-->
+            <div id="LR_Body">
+                <!--Form login -->
+                <form action="" method="">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="user" required >
+                    </div>
+                    <div class="form-group">
+                        <label >Password</label>
+                        <input type="text" class="form-control" name="password" required >
+                    </div>
+                    <button type="submit" class="btn btn-primary" value='Submit'>Login
+                    </button>
+                </form> <!--Form end -->
+            </div><!-- LR_Body End-->
+            <!-- LR_Footer-->
+            <div id='LR_Footer'>
+                <br>
+                <h6><center>Not Registered yet? <a href="#">Sign Up</a></center></h6>
+            </div><!-- LR_Footer End-->
+        </div><!-- Main Box End -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div><!--content 1 end -->
+
+
+    <footer data-th-insert="fragments/navBar.html :: footer"></footer>
+</body>
+</html>

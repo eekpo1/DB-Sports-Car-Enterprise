@@ -1,10 +1,8 @@
 package edu.csub.model
 
-import javax.persistence.Embedded
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
-data class Customer(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0, @Embedded var name: Name,
-                    @Embedded var address: Address) {
+@Entity
+data class Customer(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0, @Embedded var name: Name = Name(),
+                    @Embedded var address: Address = Address()) {
 }

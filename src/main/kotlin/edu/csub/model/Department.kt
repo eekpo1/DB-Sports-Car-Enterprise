@@ -1,15 +1,15 @@
 package edu.csub.model
 
+import java.io.Serializable
 import javax.persistence.*
 
-data class Department(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var departmentId: Long, var name: String,
-                      @OneToMany(mappedBy = "manager") var head: Employee, var amount: Int = 1) {
+@Entity
+data class Department(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var departmentId: Long = 0, var name: String = "",
+                      var head: String = "", var amount: Int = 1) : Serializable {
 
     @OneToMany(mappedBy = "department")
-    @JoinColumn(name = "employee_id")
     var members: MutableSet<Employee> = mutableSetOf()
 
-    init {
-        members.add(head)
-    }
+
+
 }
