@@ -1,8 +1,12 @@
 package edu.csub.controller
 
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 
 @Controller
 class EntryController {
@@ -14,4 +18,16 @@ class EntryController {
 
     @GetMapping("/home", "/")
     fun home(): String = "home"
+
+    @RequestMapping
+    fun logout(request: HttpServletRequest, response: HttpServletResponse): String {
+        val session = request.session
+        val auth = SecurityContextHolder.getContext().authentication
+        if (auth == null ) {
+            session.invalidate()
+            for (x in request.cookies) x.maxAge = 0
+            SecurityContextLogoutHandler().logout(request, response, auth)
+        }
+        return "redirect:/home"
+    }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head data-th-insert="fragments/template.html :: head">
+
+</head>
+<body>
+<header data-th-insert="fragments/navBar.html :: header"></header>
+<div class="content">          <!-- beg. Content -->
+    <div class="container" id="ordersBox">
+        <h1><strong>
+            <center>Customer Projects</center>
+        </strong></h1>
+        <hr>
+        <div class="row" id="newProjects">
+            <h1>
+                <center>New Projects</center>
+            </h1>
+            <hr>
+        </div>
+        <div class="row" id="currentProjects">
+            <h1>
+                <center>Current Projects</center>
+            </h1>
+            <hr>
+        </div>
+        <div class="row" id="finishedProjects">
+            <h1>
+                <center>Finished Projects</center>
+            </h1>
+            <hr>
+        </div>
+    </div>
+</div>                          <!-- end Content -->
+<footer data-th-insert="fragments/navBar.html :: footer"></footer>
+</body>
+</html>
