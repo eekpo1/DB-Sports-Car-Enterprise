@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-insert="fragments/template.html :: head">
+    <!--    <meta charset="UTF-8">-->
+    <!--    <title>Title</title>-->
+</head>
+<body>
+<header data-th-insert="fragments/navBar.html :: header"></header>
+<div class="login_registerbg"><!--content 1-->
+    <!-- Main Box -->
+    <div class="col-md-5" id="LR_Box">
+        <!-- LR_Header-->
+        <div id="LR_Header">
+            <h3>Register</h3>
+            <hr>
+        </div><!-- LR_Header End-->
+        <!-- LR_Body-->
+        <div id="LR_Body">
+            <!--Form login -->
+            <form action="newregister.php" method="post" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <!-- First Name -->
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label>First:</label>
+                        <input type="text" class="form-control" name="Fname" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <!-- Middele Name -->
+                    <div class="form-group col-md-2 col-sm-2">
+                        <label>Middle:</label>
+                        <input type="text" class="form-control" name="Mname"
+                               placeholder="M.">
+                    </div>
+                    <!-- Last Name -->
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label>Last:</label>
+                        <input type="text" class="form-control" name="Lname" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <!-- Gender -->
+                    <div class="form-group col-md-2 col-sm-2">
+                        <label>Gender:</label>
+                        <input type="text" class="form-control" name="Gender"
+                               placeholder="M or F" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- SSN -->
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label>Social Security Number:</label>
+                        <input type="text" class="form-control" name="SSN"
+                               placeholder="XXX-XX-XXXX" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- Adress -->
+                    <div class="form-group col-md-12 col-sm-12">
+                        <label>Adress:</label>
+                        <input type="text" class="form-control" name="Adress" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- City -->
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label>City:</label>
+                        <input type="text" class="form-control" name="City" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <!-- State -->
+                    <div class="form-group col-md-2 col-sm-2">
+                        <label>State:</label>
+                        <input type="text" class="form-control" name="State" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <!-- Zip Code -->
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label>Zip Code:</label>
+                        <input type="text" class="form-control" name="Zip" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- UserName -->
+                    <div class="form-group col-md-4 col-sm-4">
+                        <label>Username:</label>
+                        <input type="text" class="form-control" name="Username" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-group col-md-8 col-sm-8">
+                        <label>Email:</label>
+                        <input type="text" class="form-control" name="Email" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- Password -->
+                    <div class="form-group col-md-6 col-sm-6">
+                        <label>Password:</label>
+                        <input type="text" class="form-control" name="Password" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" value="Submit">Sign Up
+                </button>
+            </form> <!--Form end -->
+        </div><!-- LR_Body End-->
+    </div>
+</div>
+    <footer data-th-insert="fragments/navBar.html :: footer"></footer>
+</body>
+</html>
