@@ -11,5 +11,4 @@ data class Department(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) va
     var members: MutableSet<Employee> = mutableSetOf()
 
 
-
 }

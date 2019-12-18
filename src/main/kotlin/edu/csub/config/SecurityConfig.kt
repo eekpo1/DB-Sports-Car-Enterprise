@@ -27,8 +27,8 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
         val test: UserDetails = User.builder()
                 .username("admin")
 //                .password(encoder.encode("password"))
-                .password("password")
-                .roles("ADMIN", "SALES", "CUSTOMER")
+                .password(encoder.encode("password"))
+                .roles("ADMIN", "EMPLOYEE", "CUSTOMER")
                 .build()
 
         authenticationManagerBuilder.jdbcAuthentication().dataSource(dataSource).passwordEncoder(encoder)
@@ -40,7 +40,9 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
         http!!.csrf().disable()
         http.authorizeRequests().mvcMatchers("/home", "/", "/login").permitAll()
                 .and().authorizeRequests().mvcMatchers().authenticated()
-                .and().formLogin().loginPage("/login").defaultSuccessUrl("/home")
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/home").permitAll(true)
+                .and().logout().clearAuthentication(true).logoutSuccessUrl("/home").deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true).permitAll()
     }
 
     override fun configure(web: WebSecurity?) {

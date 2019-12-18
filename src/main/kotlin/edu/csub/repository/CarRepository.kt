@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository
 @RepositoryRestResource
 interface CarRepository : JpaRepository<Car, Long>{
     fun findAllByMake(make: String): List<Car>
+
+    fun findByModelIgnoreCase(model: String): List<Car>
 }
