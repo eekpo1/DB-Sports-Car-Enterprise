@@ -7,7 +7,7 @@
 <body>
 
 
-<center><img data-th-src="@{images/DBlogo.png}" id="headerImg"></center>
+<center> <img src="#" data-th-src="@{images/pr2images/DBlogo.png}" id="headerImg"></center>
 
 
 <!--Nav Begining -->
@@ -19,22 +19,22 @@
 
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="home.php">Home</a>
+                <a class='nav-link' href="/home" data-th-href="@{/home}">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="shop.php">Customize</a>
+            <li class='nav-item'>
+                <a class='nav-link' href='shop.php'>Customize</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cart.php">Cart</a>
+            <li class='nav-item'>
+                <a class='nav-link' href='cart.php'>Cart</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="vieworder.php">View Order</a>
+            <li class='nav-item'>
+                <a class='nav-link' href='vieworder.php'>View Order</a>
             </li>
 
         </ul>
-        <ul class="navbar-nav navbar-right">
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Login
+        <ul class='navbar-nav navbar-right'>
+            <li class='nav-item'>
+                <a class='nav-link' href='login.php'>Login
                     <i class="glyphicon glyphicon-user"></i>
                 </a>
             </li>
@@ -42,7 +42,7 @@
     </div>
     <!--/container-->
 </nav>
-<div data-th-fragment="footer" class="footer"><!-- beg. footer -->
+<div data-th-fragment="footer" class ="footer"><!-- beg. footer -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-bottom">
 
         <ul class="navbar-nav">
@@ -59,12 +59,8 @@
     </nav>
     <hr>
     <br>
-    <h6>
-        <center>Copyrights October 16 2019</center>
-    </h6>
-    <h6>
-        <center>Designed by Gustavo, Eddie, and Jinxu</center>
-    </h6>
+    <h6><center>Copyrights October 16 2019</center></h6>
+    <h6><center>Designed by Gustavo, Eddie, and Jinxu</center></h6>
 </div><!-- end footer-->
 </body>
 </html>

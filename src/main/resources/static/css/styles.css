@@ -1,3 +1,11 @@
+body {
+    background: url("https://www.toyotahawaii.com/sites/default/files/styles/test_drive_quote_inventory/public/model/model_management/x1564792720_5d44d7908e753.png,qitok=7DeiTyJq.pagespeed.ic.hKXaEnyJk-.png") repeat center center fixed;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    background-size: auto;
+    -o-background-size: auto;
+}
+
 #hpimgsize {
     height: 400px;
     width: auto;
@@ -52,7 +60,7 @@
 }
 
 .oldlogin_registerbg {
-    background-image: url('./pr2images/NLRbg.jpg');
+    background-image: url("static/images/pr2images/NLRbg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

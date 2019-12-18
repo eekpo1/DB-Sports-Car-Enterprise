@@ -6,6 +6,6 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-data class Car(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0, var year: String,
-               var make: String, var model: String) {
+data class Car(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0, var year: String = "",
+               var make: String = "", var model: String = "") {
 }

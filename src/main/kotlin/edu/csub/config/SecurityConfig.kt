@@ -32,7 +32,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
                 .build()
 
         authenticationManagerBuilder.jdbcAuthentication().dataSource(dataSource).passwordEncoder(encoder)
-                .withUser(test)
+//                .withUser(test)
     }
 
     override fun configure(http: HttpSecurity?) {
