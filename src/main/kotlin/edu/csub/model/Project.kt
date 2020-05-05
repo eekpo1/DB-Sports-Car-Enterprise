@@ -9,12 +9,14 @@ data class Project(@Id @GeneratedValue(strategy = GenerationType.AUTO) var id: L
                    @Enumerated var progress: Progress = Progress.IN_PROGRESS) {
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     var customer = Customer()
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "car_id", nullable = false)
+    @JoinColumn(name = "car_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     var car = Car()
+
+
 }

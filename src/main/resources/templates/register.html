@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head data-th-insert="fragments/template.html :: head">
     <!--    <meta charset="UTF-8">-->
     <!--    <title>Title</title>-->
@@ -17,25 +17,19 @@
         <!-- LR_Body-->
         <div id="LR_Body">
             <!--Form login -->
-            <form action="newregister.php" method="post" class="needs-validation" novalidate>
+            <form action="#" data-th-action="@{/register}" method="post" class="needs-validation" novalidate>
                 <div class="form-row">
                     <!-- First Name -->
                     <div class="form-group col-md-4 col-sm-4">
                         <label>First:</label>
-                        <input type="text" class="form-control" name="Fname" required>
+                        <input type="text" class="form-control" name="firstName" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                    <!-- Middele Name -->
-                    <div class="form-group col-md-2 col-sm-2">
-                        <label>Middle:</label>
-                        <input type="text" class="form-control" name="Mname"
-                               placeholder="M.">
                     </div>
                     <!-- Last Name -->
                     <div class="form-group col-md-4 col-sm-4">
                         <label>Last:</label>
-                        <input type="text" class="form-control" name="Lname" required>
+                        <input type="text" class="form-control" name="lastName" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
@@ -49,20 +43,10 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <!-- SSN -->
-                    <div class="form-group col-md-6 col-sm-6">
-                        <label>Social Security Number:</label>
-                        <input type="text" class="form-control" name="SSN"
-                               placeholder="XXX-XX-XXXX" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                </div>
-                <div class="form-row">
                     <!-- Adress -->
                     <div class="form-group col-md-12 col-sm-12">
                         <label>Adress:</label>
-                        <input type="text" class="form-control" name="Adress" required>
+                        <input type="text" class="form-control" name="streetAddress" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
@@ -71,37 +55,30 @@
                     <!-- City -->
                     <div class="form-group col-md-6 col-sm-6">
                         <label>City:</label>
-                        <input type="text" class="form-control" name="City" required>
+                        <input type="text" class="form-control" name="city" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <!-- State -->
                     <div class="form-group col-md-2 col-sm-2">
                         <label>State:</label>
-                        <input type="text" class="form-control" name="State" required>
+                        <input type="text" class="form-control" name="state" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                     <!-- Zip Code -->
                     <div class="form-group col-md-4 col-sm-4">
                         <label>Zip Code:</label>
-                        <input type="text" class="form-control" name="Zip" required>
+                        <input type="text" class="form-control" name="zip" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <!-- UserName -->
-                    <div class="form-group col-md-4 col-sm-4">
-                        <label>Username:</label>
-                        <input type="text" class="form-control" name="Username" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
                     <!-- Email -->
                     <div class="form-group col-md-8 col-sm-8">
                         <label>Email:</label>
-                        <input type="text" class="form-control" name="Email" required>
+                        <input type="text" class="form-control" name="email" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
@@ -110,7 +87,7 @@
                     <!-- Password -->
                     <div class="form-group col-md-6 col-sm-6">
                         <label>Password:</label>
-                        <input type="text" class="form-control" name="Password" required>
+                        <input type="text" class="form-control" name="password" required>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>

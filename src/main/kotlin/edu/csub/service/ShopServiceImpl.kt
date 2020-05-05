@@ -11,41 +11,41 @@ import kotlin.streams.asSequence
 import kotlin.streams.toList
 
 @Service
-class ShopServiceImpl : ShopService {
+class ShopServiceImpl {
 
     @Autowired lateinit var cars: CarRepository
     @Autowired lateinit var parts: PartRepository
 
-    private val itemList = mutableListOf<Any>()
+    val itemList = mutableListOf<Any>()
 
-    override fun addCar(car: Car) {
+    fun addCar(car: Car) {
         itemList.add(car)
     }
 
-    override fun removeCar(car: Car) {
+    fun removeCar(car: Car) {
         for (i in itemList) {
             if (i is Part && i.id == car.id)
                 itemList.remove(i)
         }
     }
 
-    override fun addPart(part: Part) {
+    fun addPart(part: Part) {
         itemList.add(part)
     }
 
-    override fun removePart(part: Part) {
+    fun removePart(part: Part) {
         for (i in itemList) {
             if (i is Part && i.id == part.id)
                 itemList.remove(i)
         }
     }
 
-    override fun checkout() {
+    fun checkout() {
        itemList.stream().filter { it is Part }
                 .map { it as Part }.map(Part::id).forEach(parts::decrementPart)
     }
 
-    override fun getTotal(): BigDecimal {
+    fun getTotal(): BigDecimal {
         val big = BigDecimal.ZERO
         for (i in itemList) {
             if (i is Car)

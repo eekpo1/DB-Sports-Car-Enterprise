@@ -5,32 +5,34 @@
 </head>
 <body>
 <header data-th-insert="fragments/navBar.html :: header"></header>
-<div class="content">          <!-- beg. Content -->
-    <div class="container" id="ordersBox">
-        <h1><strong>
-            <center>Customer Projects</center>
-        </strong></h1>
-        <hr>
-        <div class="row" id="newProjects">
-            <h1>
-                <center>New Projects</center>
-            </h1>
-            <hr>
-        </div>
-        <div class="row" id="currentProjects">
-            <h1>
-                <center>Current Projects</center>
-            </h1>
-            <hr>
-        </div>
-        <div class="row" id="finishedProjects">
-            <h1>
-                <center>Finished Projects</center>
-            </h1>
-            <hr>
-        </div>
+<h1 class="jumbotron">
+    Shopping Cart
+</h1>
+<div class="col-sm-12"><!-- total display -->
+    <hr>
+    <h4>Total</h4><h4 align="right"></h4>
+</div><!-- total display end -->
+<form action="ordercomfirm.php" method="post" class="non-validation" nonvalidate>
+    <h1>
+        <div style="text-align: center;">Customer Info</div>
+    </h1>
+    <div class="col-sm-12"><!-- customer display -->
     </div>
-</div>                          <!-- end Content -->
+    <h1>
+        <div style="text-align: center;">Car Info</div>
+        <div th:each="item : ${items}" class="flex-row">
+            <div class="col-auto">
+                <div data-th-text="@{item}"></div>
+            </div>
+        </div>
+    </h1>
+    <div class="col-sm-12"><!-- car display -->
+
+    </div><!-- end of row form-->
+</form>
+
+</div><!--car display-->
+</div><!-- Container end -->";
 <footer data-th-insert="fragments/navBar.html :: footer"></footer>
 </body>
 </html>

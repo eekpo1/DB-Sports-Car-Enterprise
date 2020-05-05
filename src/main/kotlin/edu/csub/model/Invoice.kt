@@ -16,6 +16,9 @@ data class Invoice(@Id @GeneratedValue(strategy = GenerationType.AUTO) var id: L
     @OneToMany
     val parts = mutableListOf<Part>()
 
+    @OneToOne
+    var project = Project()
+
     @PrePersist
     fun setTotal() {
         total = parts.stream().asSequence().map { it -> it.price + it.labor }.fold(BigDecimal.ZERO, BigDecimal::add)

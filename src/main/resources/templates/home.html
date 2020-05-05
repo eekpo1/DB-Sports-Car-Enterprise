@@ -43,13 +43,26 @@
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                              data-parent="#accordion">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col col-sm-2 col-md-4 col-lg-6"
+                                             data-th-each="lancer : ${lancer}">
+                                            <img data-th-src="@{images/pr2images/cars/lancer/lancerpic1.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/lancer/lancerpic2.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/lancer/lancerpic3.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <h3 data-th-text="${lancer.make}"></h3>
+                                            <h5 data-th-text="${lancer.model}"></h5>
+                                            <h5 data-th-text="'$' + ${lancer.price}"></h5>
+                                            <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#"
+                                               data-th-href="@{'/orders/car/{id}'(id=${lancer.id})}">Buy Now</a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -64,16 +77,28 @@
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col col-sm-auto col-md-auto col-lg-auto"
-                                         data-th-each="lancer : ${lancer}">
-                                        <img src="#" data-th-src="@{images/cars/lancer/premium.jpeg}" alt="lancer">
-                                            <h3 data-th-text="${lancer.make.capitalize()}"></h3>
-                                            <h5 data-th-text="${lancer.model.capitalize()}"></h5>
-                                            <h5 data-th-text="'$' + ${lancer.price}"></h5>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col col-sm-2 col-md-4 col-lg-6"
+                                             data-th-each="supra : ${supra}">
+                                            <img data-th-src="@{images/pr2images/cars/supra/black.jpeg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/supra/checkered.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/supra/grey.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/supra/red.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/supra/white.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <h3 data-th-text="${supra.make}"></h3>
+                                            <h5 data-th-text="${supra.model}"></h5>
+                                            <h5 data-th-text="'$' + ${supra.price}"></h5>
+                                            <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#"
+                                               data-th-href="@{'/orders/car/{id}'(id=${supra.id})}">Buy Now</a>
+                                        </div>
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -91,13 +116,29 @@
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                              data-parent="#accordion">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col col-sm-2 col-md-4 col-lg-6"
+                                             data-th-each="eightsix : ${eightsix}">
+                                            <img data-th-src="@{images/pr2images/cars/86/blue.jpg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/86/convertible.jpeg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/86/premium.jpeg}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/86/red.webp}" class="img-fluid"
+                                                 alt="lancer">
+                                            <img data-th-src="@{images/pr2images/cars/86/silver.webp}" class="img-fluid"
+                                                 alt="lancer">
+                                            <h3 data-th-text="${eightsix.make}"></h3>
+                                            <h5 data-th-text="${eightsix.model}"></h5>
+                                            <h5 data-th-text="'$' + ${eightsix.price}"></h5>
+                                            <a class="btn btn-primary d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#"
+                                               data-th-href="@{'/orders/car/{id}'(id=${eightsix.id})}">Buy Now</a>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

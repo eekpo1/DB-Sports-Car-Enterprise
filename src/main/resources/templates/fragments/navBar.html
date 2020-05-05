@@ -22,13 +22,13 @@
                 <a  class='nav-link' href="/home" data-th-href="@{/home}">Home</a>
             </li>
             <li class='nav-item'>
-                <a class='nav-link' href='shop.php'>Customize</a>
+                <a class='nav-link' href='#'>Customize</a>
             </li>
             <li class='nav-item'>
                 <a class='nav-link' href="#" data-th-href="@{/cart}">Cart</a>
             </li>
             <li class='nav-item'>
-                <a class='nav-link' href='vieworder.php'>View Order</a>
+                <a class='nav-link' href="/orders">View Order</a>
             </li>
             <li sec:authorize="hasAnyRole('ADMIN', 'EMPLOYEE')" class="nav-item">
                 <a class="nav-link" href="#" data-th-href="@{/projects}">Projects</a>

@@ -11,8 +11,10 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 import java.math.BigDecimal
+import javax.transaction.Transactional
 
 @Component
+@Transactional
 class DBCreationService {
     @Autowired
     lateinit var carRepository: CarRepository
@@ -30,14 +32,15 @@ class DBCreationService {
     lateinit var projectRepository: ProjectRepository
     @Autowired
     lateinit var encoder: PasswordEncoder
-    @Autowired lateinit var employeeRepository: EmployeeRepository
+    @Autowired
+    lateinit var employeeRepository: EmployeeRepository
 
     @Bean
-    fun getPasswordEncoder() : PasswordEncoder {
+    fun getPasswordEncoder(): PasswordEncoder {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder()
     }
 
-//    @EventListener
+    //    @EventListener
     fun createIn(event: ApplicationReadyEvent) {
         createAll()
     }
@@ -69,8 +72,6 @@ class DBCreationService {
                 description = "Luxury Suicide Doors", category = Category.EXTERIOR,
                 image = "images/pr2images/exterior/suicidedoor.jpg")
 
-
-
         // Interior
         val jlamplifier = Part(name = "JL Amplifier", price = BigDecimal(178.99), stock = 7, labor = BigDecimal(100.00),
                 description = "JL Audio Amplifier 500 Watts RMS X 1 at 2 Ohms ", category = Category.INTERIOR,
@@ -83,8 +84,8 @@ class DBCreationService {
                 description = "Digital Setero ", category = Category.INTERIOR,
                 image = "images/pr2images/interior/cpstereo.jpg")
         val raceSeat1 = Part(name = "Black n Yellow Race Seats", price = BigDecimal(400.99), stock = 5, labor = BigDecimal(150.00),
-        description = "Track Ready", category = Category.INTERIOR,
-        image = "images/pr2images/interior/raceseat1.jpg")
+                description = "Track Ready", category = Category.INTERIOR,
+                image = "images/pr2images/interior/raceseat1.jpg")
         val raceSeat2 = Part(name = "White Race Seats", price = BigDecimal(400.99), stock = 5, labor = BigDecimal(150.00),
                 description = "Track Ready", category = Category.INTERIOR,
                 image = "images/pr2images/interior/raceseat2.jpg")
@@ -114,8 +115,6 @@ class DBCreationService {
         partRepository.saveAll(partList)
         addDepartments()
         addEmployees()
-
-
     }
 
     private fun addEmployees() {
